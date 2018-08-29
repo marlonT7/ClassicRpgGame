@@ -1,2 +1,3 @@
-class Item(val name: String, val healPointRestore: Int, val price: Int) {
+class Item(var name: String, var healPointRestore: Int, var price: Int) {
+
 }
