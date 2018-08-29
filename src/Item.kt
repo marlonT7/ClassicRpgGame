@@ -1,3 +1,1 @@
-class Item(var name: String, var healPointRestore: Int, var price: Int) {
-
-}
+class Item(var name: String, var healPointRestore: Int, var price: Int)
