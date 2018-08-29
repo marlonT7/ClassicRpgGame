@@ -4,8 +4,8 @@ data class MainCharacter(private var level: Int = 0,
                          var myStorage: MutableList<Item> = arrayListOf(),
                          private var gold: Int = 0) : Character() {
 
-    //Calls level up method from the super class, adds 1 to the level,
-    //set the experience 0 and increase the experience to the next level in 10%
+    // Calls level up method from the super class, adds 1 to the level,
+    // set the experience 0 and increase the experience to the next level in 10%
     private fun levelUp(experience: Int) {
         super.levelUp2()
         this.level++
@@ -17,11 +17,11 @@ data class MainCharacter(private var level: Int = 0,
         return this.isAlive() && this.level < 5
     }
 
-    //Adds the item's heal point restore to the character's heal points,
-    //if the heal points reaches the maximum limit, then the heal points
+    // Adds the item's heal point restore to the character's heal points,
+    // if the heal points reaches the maximum limit, then the heal points
     // set equal to max heal points
     // remove the item from my storage item list
-    fun applyItem(item: Item) {
+    private fun applyItem(item: Item) {
         super.healPoints += super.healPoints + item.healPointRestore
         if (super.healPoints > super.maxHealPoints) {
             super.healPoints = super.maxHealPoints
@@ -29,10 +29,10 @@ data class MainCharacter(private var level: Int = 0,
         this.myStorage.remove(item)
     }
 
-    //Adds the gained experience to the character's experience
-    //if the character's experience reaches the experience to the next level
-    //then calls the level up method with the difference of the experience
-    //and the experience to the next level as arg
+    // Adds the gained experience to the character's experience
+    // if the character's experience reaches the experience to the next level
+    // then calls the level up method with the difference of the experience
+    // and the experience to the next level as arg
     fun gainExperience(experience: Int) {
         this.experience += experience
         if (this.experience > this.experienceToNextLevel) {
@@ -44,8 +44,8 @@ data class MainCharacter(private var level: Int = 0,
         this.gold += gold
     }
 
-    //If the character's gold reaches the item's price,
-    //adds item to my storage item list
+    // If the character's gold reaches the item's price,
+    // adds item to my storage item list
     fun buyItem(item: Item) {
         if (item.price > this.gold) {
             println("You don't have enough gold")

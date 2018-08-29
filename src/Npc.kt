@@ -1,4 +1,4 @@
-class Npc(    //Creates the NPC items to sell
+class Npc(    // Creates the NPC items to sell
         private val itemsToSell: ArrayList<Item> = arrayListOf(
                 Item(name = "Apple", healPointRestore = 20, price = 5),
                 Item(name = "Green potion", healPointRestore = 40, price = 10),
@@ -6,7 +6,7 @@ class Npc(    //Creates the NPC items to sell
                 Item(name = "Red potion", healPointRestore = 80, price = 20))) {
 
 
-    //Talk whit a NPC
+    // Talk whit a NPC
     fun menu(): Item {
         var item = Item(name = "void", healPointRestore = 0, price = 0)
         println("Hello, can I help you?")
@@ -15,8 +15,8 @@ class Npc(    //Creates the NPC items to sell
         println("Any other---Good bye")
         val menu: String = readLine().toString()
         when (menu) {
-            //If select buy Item in the menu, return the selected item
-            //else return "void"
+            // If select buy Item in the menu, return the selected item
+            // else return "void"
             "1" -> item = sellItem()
             "2" -> chat()
             else -> println("Good bye")
@@ -24,12 +24,12 @@ class Npc(    //Creates the NPC items to sell
         return item
     }
 
-    //Sell an item
+    // Sell an item
     private fun sellItem(): Item {
         var selectedItem: Int
         println("What would you buy?")
         println("Select an item")
-        //Displays the items in the NPC storage
+        // Displays the items in the NPC storage
         itemsToSell.forEach {
             println(itemsToSell.indexOf(it).toString() + " " + it.name + " Restores: " + it.healPointRestore + " HP Price: " + it.price)
         }
@@ -45,14 +45,14 @@ class Npc(    //Creates the NPC items to sell
         return itemsToSell[selectedItem]
     }
 
-    //Chat with the NPC
+    // Chat with the NPC
     private fun chat() {
         println("What you want to know")
         println("1-------------How can I defeat any enemy?")
         println("2-------------When I win?")
         println("Any other-----Good bye")
         val menu: String = readLine().toString()
-        //Options menu for chat
+        // Options menu for chat
 
         when (menu) {
             "1" -> println("Attack him until his is 0")
